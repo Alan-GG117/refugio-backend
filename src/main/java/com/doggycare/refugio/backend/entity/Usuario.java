@@ -23,11 +23,9 @@ public class Usuario {
     @NotBlank
     private String nombre;
 
-    @NotBlank
     @Column(name = "apellido_paterno")
     private String paterno;
 
-    @NotBlank
     @Column(name = "apellido_materno")
     private String materno;
 
