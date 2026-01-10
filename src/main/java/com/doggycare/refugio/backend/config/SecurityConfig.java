@@ -68,7 +68,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         // 1. Permitir que Angular entre (Origen)
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "https://refugiodoggycare.netlify.app/"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "https://refugiodoggycare.netlify.app"));
 
         // 2. Permitir TODOS los métodos HTTP (Incluyendo PATCH para tus citas)
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
