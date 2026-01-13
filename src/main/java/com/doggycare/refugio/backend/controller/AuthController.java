@@ -56,7 +56,16 @@ public class AuthController {
         respuesta.put("usuarioId", usuario.getId());
         respuesta.put("nombre", usuario.getNombre());
         respuesta.put("email", usuario.getEmail());
-        respuesta.put("rol", usuario.getRoles().iterator().next().getNombre());
+
+        // --- CORRECCIÓN ---
+        // Verificamos si la lista de roles tiene elementos antes de intentar acceder
+        if (usuario.getRoles() != null && !usuario.getRoles().isEmpty()) {
+            respuesta.put("rol", usuario.getRoles().iterator().next().getNombre());
+        } else {
+            // Rol por defecto si el usuario no tiene ninguno asignado en BD
+            respuesta.put("rol", "ROLE_ADOPTANTE");
+        }
+        // ------------------
 
         return ResponseEntity.ok(respuesta);
     }
